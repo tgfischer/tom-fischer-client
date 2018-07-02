@@ -1,0 +1,77 @@
+{
+  "name": "tom-fischer-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
+    "classnames": "^2.2.6",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-scroll": "^1.7.9",
+    "redux": "^4.0.0",
+    "uuid": "^3.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "node ./scripts/deploy.js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "npx eslint --fix -- ."
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.48.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.8.2",
+    "minimist": "^1.2.0",
+    "prettier": "^1.12.1",
+    "serverless": "^1.27.3",
+    "serverless-build-client": "^1.0.0",
+    "serverless-finch": "^2.1.2",
+    "shelljs": "^0.8.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:prettier/recommended",
+      "react-app"
+    ],
+    "plugins": [
+      "prettier",
+      "import",
+      "flowtype",
+      "jsx-a11y"
+    ],
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "es6": true
+    },
+    "rules": {
+      "no-undef": "error",
+      "no-unused-vars": "error",
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "prettier/prettier": "error",
+      "jsx-a11y/href-no-hash": "off"
+    }
+  }
+}
