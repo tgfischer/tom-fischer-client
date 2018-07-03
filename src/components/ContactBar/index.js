@@ -9,22 +9,25 @@ import Hidden from "@material-ui/core/Hidden";
 
 const styles = {
   root: {
-    minHeight: "35px"
+    minHeight: "35px",
+    padding: "0.5em"
   }
 };
 
 const NavBar = ({ classes, email }) => (
-  <AppBar position="sticky" color="secondary">
+  <AppBar position="static" color="secondary">
     <Toolbar className={classes.root}>
       <Grid container spacing={16} alignItems="center">
         <Hidden smDown>
           <Grid item sm />
         </Hidden>
         <Grid item sm={12} md={8}>
-          <Grid container justify="flex-end" alignItems="center">
-            <Typography variant="body1" color="inherit">
-              email: {email}
-            </Typography>
+          <Grid container spacing={8} justify="flex-end" alignItems="center">
+            <Grid item>
+              <Typography variant="body1" color="inherit">
+                email: {email}
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
         <Hidden smDown>
@@ -36,6 +39,9 @@ const NavBar = ({ classes, email }) => (
 );
 
 NavBar.propTypes = {
+  classes: PropTypes.shape({
+    root: PropTypes.string.isRequired
+  }).isRequired,
   email: PropTypes.string.isRequired
 };
 

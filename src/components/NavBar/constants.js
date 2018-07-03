@@ -4,6 +4,10 @@ export const pages = [
     name: "Home"
   },
   {
+    path: "https://github.com/tgfischer",
+    name: "GitHub"
+  },
+  {
     path: "/about",
     name: "About"
   },

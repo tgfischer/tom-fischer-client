@@ -49,11 +49,30 @@ const NavBar = ({ classes, openSidebar, title }) => (
               {title}
             </Typography>
             <Hidden smDown>
-              {constants.pages.map(({ path, name }) => (
-                <Button key={path} component={Link} to={path} color="inherit">
-                  {name}
-                </Button>
-              ))}
+              {constants.pages.map(
+                ({ path, name }) =>
+                  path.startsWith("https://") ? (
+                    <Button
+                      key={path}
+                      component="a"
+                      href={path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      color="inherit"
+                    >
+                      {name}
+                    </Button>
+                  ) : (
+                    <Button
+                      key={path}
+                      component={Link}
+                      to={path}
+                      color="inherit"
+                    >
+                      {name}
+                    </Button>
+                  )
+              )}
             </Hidden>
           </Grid>
         </Grid>
