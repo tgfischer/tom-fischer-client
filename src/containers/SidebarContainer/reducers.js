@@ -7,9 +7,13 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_SIDEBAR:
-      return { isOpen: true };
+      return {
+        isOpen: true
+      };
     case CLOSE_SIDEBAR:
-      return { isOpen: false };
+      return {
+        isOpen: false
+      };
     default:
       return state;
   }

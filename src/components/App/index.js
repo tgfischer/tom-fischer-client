@@ -4,8 +4,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 import Home from "../Home";
 import About from "../About";
-import Education from "../Education";
-import Experience from "../Experience";
+import Education from "../../containers/EducationContainer";
+import Experience from "../../containers/ExperienceContainer";
 
 export default () => (
   <Fragment>

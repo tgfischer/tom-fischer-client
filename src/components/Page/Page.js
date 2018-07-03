@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import debounce from "lodash/debounce";
 import { withStyles } from "@material-ui/core";
@@ -9,6 +9,7 @@ import ScrollTopButton from "../../components/ScrollTopButton";
 import Header from "../Header";
 import NavBar from "../../containers/NavBarContainer";
 import Sidebar from "../../containers/SidebarContainer";
+import Loading from "../Loading";
 
 const styles = {
   container: {
@@ -42,7 +43,14 @@ class Page extends Component {
   }
 
   render() {
-    const { background, children, classes, headline, skinny } = this.props;
+    const {
+      background,
+      children,
+      classes,
+      headline,
+      skinny,
+      isLoading
+    } = this.props;
     const styles = background
       ? {
           minHeight: "100vh",
@@ -52,20 +60,25 @@ class Page extends Component {
       : null;
 
     return (
-      <div className="app" style={styles}>
-        <ContactBar email="tgfischer6@gmail.com" />
-        <NavBar title="Tom Fischer" />
-        {Boolean(headline) && <Header text={headline} skinny={skinny} />}
-        <Grid container className={classes.container} alignItems="center">
-          <Grid item xs sm />
-          <Grid item xs={12} sm={12} md={skinny ? 6 : 8}>
-            {children}
-          </Grid>
-          <Grid item xs sm />
-        </Grid>
-        <Sidebar />
-        {this.state.showScrollToTop && <ScrollTopButton />}
-      </div>
+      <Fragment>
+        {!isLoading && (
+          <div className="app" style={styles}>
+            <ContactBar email="tgfischer6@gmail.com" />
+            <NavBar title="Tom Fischer" />
+            {Boolean(headline) && <Header text={headline} skinny={skinny} />}
+            <Grid container className={classes.container} alignItems="center">
+              <Grid item xs sm />
+              <Grid item xs={12} sm={12} md={skinny ? 6 : 8}>
+                {children}
+              </Grid>
+              <Grid item xs sm />
+            </Grid>
+            <Sidebar />
+            {this.state.showScrollToTop && <ScrollTopButton />}
+          </div>
+        )}
+        {isLoading && <Loading />}
+      </Fragment>
     );
   }
 }
@@ -74,12 +87,14 @@ Page.propTypes = {
   background: PropTypes.string,
   children: PropTypes.node.isRequired,
   headline: PropTypes.string,
-  skinnt: PropTypes.bool
+  isLoading: PropTypes.bool,
+  skinny: PropTypes.bool
 };
 
 Page.defaultProps = {
   background: null,
   headline: null,
+  isLoading: false,
   skinny: false
 };
 
