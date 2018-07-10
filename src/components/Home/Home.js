@@ -7,6 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import Hidden from "@material-ui/core/Hidden";
+import blueGrey from "@material-ui/core/colors/blueGrey";
 
 import Page from "../Page";
 
@@ -16,6 +18,7 @@ const styles = theme => ({
   },
   paper: {
     marginTop: "15em",
+    backgroundColor: blueGrey[700],
     [theme.breakpoints.down("sm")]: {
       marginTop: "10em"
     },
@@ -41,8 +44,10 @@ const styles = theme => ({
 const Home = ({ classes }) => (
   <Page background="/images/background.jpg">
     <Grid container>
-      <Grid item xs />
-      <Grid item xs={10}>
+      <Hidden xsDown>
+        <Grid item xs />
+      </Hidden>
+      <Grid item xs={12} sm={10}>
         <Paper className={classes.paper} color="primary">
           <div className={classes.container}>
             <Grid container justify="center" spacing={24}>
@@ -79,7 +84,9 @@ const Home = ({ classes }) => (
           </div>
         </Paper>
       </Grid>
-      <Grid item xs />
+      <Hidden xsDown>
+        <Grid item xs />
+      </Hidden>
     </Grid>
   </Page>
 );

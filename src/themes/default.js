@@ -19,11 +19,6 @@ export default createMuiTheme({
         textTransform: "uppercase"
       }
     },
-    MuiPaper: {
-      root: {
-        backgroundColor: blueGrey[700]
-      }
-    },
     MuiDrawer: {
       paper: {
         backgroundColor: grey[50]

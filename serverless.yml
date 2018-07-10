@@ -28,6 +28,7 @@ provider:
   stage: ${opt:stage, "prod"}
   environment:
     REACT_APP_BACKEND_ENDPOINT: ${cf:tom-fischer-backend-${self:provider.stage}.ServiceEndpoint}
+    REACT_APP_USER_SERVICE_ENDPOINT: ${cf:tom-fischer-users-${self:provider.stage}.ServiceEndpoint}
 
 resources:
   Resources:
