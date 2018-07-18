@@ -14,6 +14,7 @@ const styles = theme => ({
   },
   paper: {
     marginTop: "15em",
+    backgroundColor: "#FFF",
     [theme.breakpoints.down("sm")]: {
       marginTop: "10em"
     },

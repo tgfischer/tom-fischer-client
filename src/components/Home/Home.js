@@ -8,7 +8,6 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Hidden from "@material-ui/core/Hidden";
-import blueGrey from "@material-ui/core/colors/blueGrey";
 
 import Page from "../Page";
 
@@ -18,7 +17,6 @@ const styles = theme => ({
   },
   paper: {
     marginTop: "15em",
-    backgroundColor: blueGrey[700],
     [theme.breakpoints.down("sm")]: {
       marginTop: "10em"
     },

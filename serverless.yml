@@ -1,6 +1,7 @@
 service: tom-fischer
 
 plugins:
+  - serverless-plugin-cloudformation-cross-region-variables
   - serverless-finch
   - serverless-build-client
 
@@ -28,7 +29,7 @@ provider:
   stage: ${opt:stage, "prod"}
   environment:
     REACT_APP_BACKEND_ENDPOINT: ${cf:tom-fischer-backend-${self:provider.stage}.ServiceEndpoint}
-    REACT_APP_USER_SERVICE_ENDPOINT: ${cf:tom-fischer-users-${self:provider.stage}.ServiceEndpoint}
+    REACT_APP_USER_SERVICE_ENDPOINT: ${cfcr:us-east-1:tom-fischer-users-${self:provider.stage}:ServiceEndpoint}
 
 resources:
   Resources:

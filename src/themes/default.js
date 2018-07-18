@@ -30,6 +30,11 @@ export default createMuiTheme({
         bottom: "1em",
         right: "1em"
       }
+    },
+    MuiPaper: {
+      root: {
+        backgroundColor: blueGrey[700]
+      }
     }
   },
   palette: {
