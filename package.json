@@ -42,8 +42,8 @@
     "eslint-plugin-react": "^7.8.2",
     "minimist": "^1.2.0",
     "prettier": "^1.12.1",
-    "serverless": "^1.27.3",
-    "serverless-build-client": "^1.0.0",
+    "serverless": "^1.28.0",
+    "serverless-build-client": "^2.0.0",
     "serverless-finch": "^2.1.2",
     "serverless-plugin-cloudformation-cross-region-variables": "^1.0.5",
     "shelljs": "^0.8.2"
